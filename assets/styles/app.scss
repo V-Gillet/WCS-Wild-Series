@@ -23,3 +23,10 @@ $font-body : 'Hind', sans-serif;
     filter:drop-shadow(8px 8px 3px $secondary);
 
 }
+
+nav{
+    a{
+        text-shadow: 2px 0 $tertiary, -2px 0 $tertiary, 0 2px $tertiary, 0 -2px $tertiary,
+        1px 1px $tertiary, -1px -1px $tertiary, 1px -1px $tertiary, -1px 1px $tertiary;
+    }
+}
