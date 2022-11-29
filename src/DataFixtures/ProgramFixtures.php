@@ -31,7 +31,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
             'Category' => 'category_Animation',
         ],
         [
-            'Title' => 'Boba Fett',
+            'Title' => 'The mandalorian',
             'Synopsis' => 'Baby Yoda se fait la malle',
             'Category' => 'category_Sciences-fiction',
         ],
