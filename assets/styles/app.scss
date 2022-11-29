@@ -21,7 +21,6 @@ $font-body : 'Hind', sans-serif;
     font-family: $font-header;
     color: $tertiary;
     filter:drop-shadow(8px 8px 3px $secondary);
-
 }
 
 nav{
@@ -29,4 +28,10 @@ nav{
         text-shadow: 2px 0 $tertiary, -2px 0 $tertiary, 0 2px $tertiary, 0 -2px $tertiary,
         1px 1px $tertiary, -1px -1px $tertiary, 1px -1px $tertiary, -1px 1px $tertiary;
     }
+}
+
+.video-header{
+    object-fit: cover;
+    height : 100vh;
+    overflow: hidden;
 }

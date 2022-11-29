@@ -6,4 +6,7 @@
 {% block body %}
 	<h1 class="text-primary">{{ website }}
 		index</h1>
+
+	<a href="{{ path('program_show', {id: 1}) }}">Afficher la page 1</a>
+	<a href="{{ path('program_show', {id: 2}) }}">Afficher la page 2</a>
 {% endblock %}
