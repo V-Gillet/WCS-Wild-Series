@@ -1,0 +1,25 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hind:wght@400;600;700&family=Rubik+Glitch&display=swap');
+
+$primary : #490E59;
+$secondary : #F2507B;
+$tertiary : #36BFB1;
+$dark : #140726e1;
+$light : #F8F6FA;
+$font-header :'Rubik Glitch', cursive;
+$font-title : 'Bebas Neue', cursive;
+$font-body : 'Hind', sans-serif;
+
+@import "~bootstrap/scss/bootstrap";
+
+.logo{
+    width : auto;
+    height: 80px;
+}
+
+.header-text{
+    font-family: $font-header;
+    color: $tertiary;
+    filter:drop-shadow(8px 8px 3px $secondary);
+
+}
