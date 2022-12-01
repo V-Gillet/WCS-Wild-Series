@@ -6,9 +6,9 @@
 
 
 {% block body %}
-	<div class="video-header">
-		<video class="w-100 position-relative" src="{{ asset('build/images/AffectionateMeagerGermanshorthairedpointer.mp4') }}" autoplay loop></video>
-		<h1 class="header-text display-1 position-absolute top-50 start-50 translate-middle">Toutes vos séries au bout de vos doigts</h1>
+	<video class="w-100 position-relative video" src="{{ asset('build/images/AffectionateMeagerGermanshorthairedpointer.mp4') }}" autoplay loop></video>
+	<div class="position-absolute top-50 start-50 translate-middle d-flex flex-column justify-content-center align-items-center">
+		<h1 class="header-text display-1 text-center mb-4">Toutes vos séries au bout de vos doigts</h1>
+		<a href="#" class="btn btn-primary p-3 px-5 mt-5">Inscrivez-vous</a>
 	</div>
-
 {% endblock %}

@@ -14,7 +14,7 @@ $font-body : 'Hind', sans-serif;
 
 .logo{
     width : auto;
-    height: 80px;
+    height: 70px;
 }
 
 .header-text{
@@ -23,15 +23,103 @@ $font-body : 'Hind', sans-serif;
     filter:drop-shadow(8px 8px 3px $secondary);
 }
 
+h1{
+  font-family:$font-title;
+}
+
+h2{
+  font-family:$font-title;
+}
+
+p{
+  font-family: $font-body;
+}
+
 nav{
     a{
-        text-shadow: 2px 0 $tertiary, -2px 0 $tertiary, 0 2px $tertiary, 0 -2px $tertiary,
-        1px 1px $tertiary, -1px -1px $tertiary, 1px -1px $tertiary, -1px 1px $tertiary;
+        animation: flicker 3s linear infinite;
+        font-family: $font-body;
+    }
+
+    p{
+      font-family: $font-title;
     }
 }
 
-.video-header{
+
+  @keyframes flicker {
+    0% {
+        text-shadow: 2px 0 rgba(54, 191, 177, 1), -2px 0 rgba(54, 191, 177, 1), 0 2px rgba(54, 191, 177, 1), 0 -2px rgba(54, 191, 177, 1),
+        1px 1px rgba(54, 191, 177, 1), -1px -1px rgba(54, 191, 177, 1), 1px -1px rgba(54, 191, 177, 1), -1px 1px rgba(54, 191, 177, 1);
+    }
+    25% {
+      opacity:0.8;
+        text-shadow: 2px 0 rgba(54, 191, 177, 0.3), -2px 0 rgba(54, 191, 177, 0.3), 0 2px rgba(54, 191, 177, 0.3), 0 -2px rgba(54, 191, 177, 0.3),
+        1px 1px rgba(54, 191, 177, 0.3), -1px -1px rgba(54, 191, 177, 0.3), 1px -1px rgba(54, 191, 177, 0.3), -1px 1px rgba(54, 191, 177, 0.3);
+    }
+    30% {
+      opacity:1;
+        text-shadow: 2px 0 rgba(54, 191, 177, 0.5), -2px 0 rgba(54, 191, 177, 0.5), 0 2px rgba(54, 191, 177, 0.5), 0 -2px rgba(54, 191, 177, 0.5),
+        1px 1px rgba(54, 191, 177, 0.5), -1px -1px rgba(54, 191, 177, 0.5), 1px -1px rgba(54, 191, 177, 0.5), -1px 1px rgba(54, 191, 177, 0.5);
+    }
+    45% {
+        text-shadow: 2px 0 rgba(54, 191, 177, 0.3), -2px 0 rgba(54, 191, 177, 0.3), 0 2px rgba(54, 191, 177, 0.3), 0 -2px rgba(54, 191, 177, 0.3),
+        1px 1px rgba(54, 191, 177, 0.3), -1px -1px rgba(54, 191, 177, 0.3), 1px -1px rgba(54, 191, 177, 0.3), -1px 1px rgba(54, 191, 177, 0.3);
+      }
+    62% {
+        text-shadow: 2px 0 rgba(54, 191, 177, 0.7), -2px 0 rgba(54, 191, 177, 0.7), 0 2px rgba(54, 191, 177, 0.7), 0 -2px rgba(54, 191, 177, 0.7),
+        1px 1px rgba(54, 191, 177, 0.7), -1px -1px rgba(54, 191, 177, 0.7), 1px -1px rgba(54, 191, 177, 0.7), -1px 1px rgba(54, 191, 177, 0.7);
+    }
+    77% {
+      opacity:.9;
+        text-shadow: 2px 0 rgba(54, 191, 177, 0.1), -2px 0 rgba(54, 191, 177, 0.1), 0 2px rgba(54, 191, 177, 0.1), 0 -2px rgba(54, 191, 177, 0.1),
+        1px 1px rgba(54, 191, 177, 0.1), -1px -1px rgba(54, 191, 177, 0.1), 1px -1px rgba(54, 191, 177, 0.1), -1px 1px rgba(54, 191, 177, 0.1);
+    }
+    82% {
+        opacity:.9;
+          text-shadow: 2px 0 rgba(54, 191, 177, 0.4), -2px 0 rgba(54, 191, 177, 0.4), 0 2px rgba(54, 191, 177, 0.4), 0 -2px rgba(54, 191, 177, 0.4),
+          1px 1px rgba(54, 191, 177, 0.4), -1px -1px rgba(54, 191, 177, 0.4), 1px -1px rgba(54, 191, 177, 0.4), -1px 1px rgba(54, 191, 177, 0.4);
+      }
+    91% {
+        opacity:.9;
+        text-shadow: 2px 0 rgba(54, 191, 177, 0.2), -2px 0 rgba(54, 191, 177, 0.2), 0 2px rgba(54, 191, 177, 0.2), 0 -2px rgba(54, 191, 177, 0.2),
+        1px 1px rgba(54, 191, 177, 0.2), -1px -1px rgba(54, 191, 177, 0.2), 1px -1px rgba(54, 191, 177, 0.2), -1px 1px rgba(54, 191, 177, 0.2);
+      }
+    100% {
+      opacity:1;
+      text-shadow: 2px 0 rgba(54, 191, 177, 1), -2px 0 rgba(54, 191, 177, 1), 0 2px rgba(54, 191, 177, 1), 0 -2px rgba(54, 191, 177, 1),
+      1px 1px rgba(54, 191, 177, 1), -1px -1px rgba(54, 191, 177, 1), 1px -1px rgba(54, 191, 177, 1), -1px 1px rgba(54, 191, 177, 1);
+    }
+  }
+
+.video{
     object-fit: cover;
-    height : 100vh;
-    overflow: hidden;
+    height : 91vh;
+}
+
+.retro-wave{
+  background-image: url(../images/retro-wave.jpg) ;
+  object-fit: cover;
+  height : 92vh;
+}
+
+.card-title{
+  color : $tertiary;
+}
+
+.card{
+  box-shadow: rgba(242, 80, 123, 0.4) 5px 5px, rgba(242, 80, 123, 0.3) 10px 10px, rgba(242, 80, 123, 0.2) 15px 15px, rgba(242, 80, 123, 0.1) 20px 20px, rgba(242, 80, 123, 0.05) 25px 25px,rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(242, 80, 123, 0.3) 0px 18px 36px -18px inset;
+}
+
+.card-container{
+  height : 400px;
+  width : 350px;
+}
+
+.category-container{
+  margin-block-start:-150px;
+}
+
+.navbar{
+  box-shadow: rgba(54, 191, 177, 0.25) 0px 40px 45px, rgba(54, 191, 177, 0.12) 0px -12px 30px, rgba(54, 191, 177, 0.12) 0px 4px 6px, rgba(54, 191, 177, 0.17) 0px 12px 13px, rgba(54, 191, 177, 0.09) 0px -3px 5px;
 }

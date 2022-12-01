@@ -19,3 +19,4 @@ let html = `<img src="${headerPath}" alt="image of retro wave">`;
 import logoPath from './images/logo-wild-serie.png';
 
 let logo = `<img src="${logoPath}" alt="image of retro wave">`;
+

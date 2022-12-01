@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Série #{{ program.id }}
+{% block title %}Saison #{{ season.number }}
 {% endblock %}
 
 {% block body %}
 	<div class="retro-wave">
 		<div class="container-fluid h-100 pt-5">
 			<div class="row g-0 ">
-				<a href="{{ path('program_index') }}" class="text-light col-md-2">
+				<a href="{{ path("program_show", { id: season.program.id }) }}" class="text-light col-md-2">
 					<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="#F2507B" class="bi bi-arrow-left-circle-fill m-3" viewbox="0 0 16 16">
 						<path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
 					</svg>
@@ -17,16 +17,11 @@
 						<img src="{{ asset('build/images/breaking_bad.jpg') }}" class="card-img-top" alt="...">
 						<div class="card-body d-flex flex-column">
 							<h1 class="card-title">
-								{{program.title}}
+								Saison #{{season.number}}
+								de
+								{{season.program.title}}
 							</h1>
-							<p class="card-text text-light ">{{program.synopsis}}</p>
-							<div class="d-flex py-2 text-secondary">
-								Saisons :
-								{% for season in program.seasons %}
-									<a href="{{ path("program_season_show", { programId: program.id,seasonId: season.id }) }}" class="card-text text-secondary px-2">{{season.number}}</a>
-								{% endfor %}
-							</div>
-							<a href="{{ path("program_show", { id: program.id }) }}" class="btn btn-light">Voir la fiche</a>
+							<p class="card-text text-light ">{{season.description}}</p>
 						</div>
 					</div>
 				</div>

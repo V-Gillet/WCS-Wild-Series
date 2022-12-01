@@ -1,55 +1,51 @@
 <nav class="navbar navbar-expand-lg bg-dark">
 	<div class="container-fluid ">
-		<img class="logo" src="{{ asset('build/images/logo-wild-serie.png') }}" alt="VHS logo">
-		<a class="navbar-brand text-light" href="#">Wild series</a>
+		<a class="navbar-brand text-secondary px-3 d-flex justify-content-around align-items-center" href="{{ path('app_index') }}">
+			<img class="logo" src="{{ asset('build/images/logo-wild-serie.png') }}" alt="VHS logo">
+			<p class="text-secondary fs-1 px-3 m-0">Wild series</p>
+		</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse" id="navbarNavDropdown">
-			<ul class="navbar-nav">
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						Catégories
-					</a>
-					<ul class="dropdown-menu">
-						<li>
-							<a class="dropdown-item" href="#">Action</a>
-						</li>
-						<li>
-							<a class="dropdown-item" href="#">Another action</a>
-						</li>
-						<li>
-							<a class="dropdown-item" href="#">Something else here</a>
-						</li>
-					</ul>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						Acteurs
-					</a>
-					<ul class="dropdown-menu">
-						<li>
-							<a class="dropdown-item" href="#">Action</a>
-						</li>
-						<li>
-							<a class="dropdown-item" href="#">Another action</a>
-						</li>
-						<li>
-							<a class="dropdown-item" href="#">Something else here</a>
-						</li>
-					</ul>
+		<div class="collapse navbar-collapse row" id="navbarNavDropdown">
+			<div class="col-9">
+				<ul class="navbar-nav">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle text-light fs-4" href="{{ path('category_index') }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							Catégories
+						</a>
+						<ul class="dropdown-menu">
+							{% for category in categories %}
+								<li>
+									<a class="dropdown-item text-light" href="{{ path("category_show", { categoryName: category.name }) }}">{{category.name}}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle text-light fs-4" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							Acteurs
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a class="dropdown-item text-light" href="#">Action</a>
+							</li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-light fs-4" href="#">Mes favoris</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-3 d-flex justify-content-around">
+				<li class="nav-item">
+					<a class="nav-link text-light fs-4" href="#">Déconnexion</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-light" href="#">Mes favoris</a>
+					<a class="nav-link text-light fs-4" href="#">John Doe</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link text-light" href="#">Déconnexion</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link text-light" href="#">Jonh Doe</a>
-				</li>
-			</ul>
-			<img src="" alt="">
+
+				<img src="" alt="">
+			</div>
 		</div>
-	</div>
-</nav>
+	</nav>

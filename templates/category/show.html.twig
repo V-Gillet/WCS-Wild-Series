@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Category
+{% endblock %}
+
+{% block body %}
+	<div class="retro-wave">
+		<a href="{{ path('category_index') }}" class="text-light">
+			<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="#F2507B" class="bi bi-arrow-left-circle-fill m-3" viewbox="0 0 16 16">
+				<path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+			</svg>
+		</a>
+		<div class="container-xxl category-container">
+			<div class="row g-4 pt-5">
+				{% for program in programs %}
+					<div class="card col-md-3 h-50 bg-primary p-0">
+						<img src="{{ asset('build/images/breaking_bad.jpg') }}" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h2 class="card-title">
+								{{program.id}}
+								{{program.title}}
+							</h2>
+							<p class="card-text text-light">{{program.synopsis}}</p>
+							<a href="{{ path("program_show", { id: program.id }) }}" class="btn btn-light">Voir la fiche</a>
+						</div>
+					</div>
+				{% else %}
+					Aucun programme trouvé pour la catégorie
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endblock %}
