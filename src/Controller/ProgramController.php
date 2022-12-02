@@ -2,9 +2,10 @@
 
 namespace App\Controller;
 
+use App\Repository\SeasonRepository;
+use App\Repository\EpisodeRepository;
 use App\Repository\ProgramRepository;
 use App\Repository\CategoryRepository;
-use App\Repository\SeasonRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -54,21 +55,41 @@ class ProgramController extends AbstractController
         ]);
     }
 
-    #[Route('program/{programId}/season/{seasonId}', methods: ['GET'], name: 'season_show')]
-    public function showSeason(int $programId, int $seasonId, ProgramRepository $programRepository, CategoryRepository $categoryRepository, SeasonRepository $seasonRepository): Response
+    #[Route('{programId}/season/{seasonId}', methods: ['GET'], name: 'season_show')]
+    public function showSeason(int $programId, int $seasonId, CategoryRepository $categoryRepository, SeasonRepository $seasonRepository, EpisodeRepository $episodeRepository): Response
     {
         $categories = $categoryRepository->findAll();
 
         $season = $seasonRepository->findOneBy(
             ['id' => $seasonId],
         );
-        //var_dump($season);
-        //exit();
+
+        $episodes = $episodeRepository->findBy(
+            ['season' => $season],
+        );
 
         return $this->render('program/season_show.html.twig', [
 
             'categories' => $categories,
             'season' => $season,
+            'episodes' => $episodes,
+
+        ]);
+    }
+
+    #[Route('{programId}/season/{seasonId}/episode/{episodeId}', methods: ['GET'], name: 'episode_show')]
+    public function showEpisode(int $programId, int $seasonId, int $episodeId, CategoryRepository $categoryRepository, EpisodeRepository $episodeRepository): Response
+    {
+        $categories = $categoryRepository->findAll();
+
+        $episode = $episodeRepository->findOneBy(
+            ['id' => $episodeId],
+        );
+
+        return $this->render('program/episode_show.html.twig', [
+
+            'categories' => $categories,
+            'episode' => $episode,
 
         ]);
     }
