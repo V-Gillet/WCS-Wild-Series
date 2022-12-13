@@ -23,10 +23,10 @@
 							<div class="d-flex py-2 text-secondary">
 								Saisons :
 								{% for season in program.seasons %}
-									<a href="{{ path("program_season_show", { programId: program.id,seasonId: season.id }) }}" class="card-text text-secondary px-2">{{season.number}}</a>
+									<a href="{{ path("program_season_show", { program: program.id, season: season.id }) }}" class="card-text text-secondary px-2">{{season.number}}</a>
 								{% endfor %}
 							</div>
-							<a href="{{ path("program_show", { id: program.id }) }}" class="btn btn-light">Voir la fiche</a>
+							<a href="{{ path("program_show", { program: program.id }) }}" class="btn btn-light">Voir la fiche</a>
 						</div>
 					</div>
 				</div>

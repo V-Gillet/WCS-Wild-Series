@@ -21,7 +21,7 @@
 								{{program.title}}
 							</h2>
 							<p class="card-text text-light">{{program.synopsis}}</p>
-							<a href="{{ path("program_show", { id: program.id }) }}" class="btn btn-light">Voir la fiche</a>
+							<a href="{{ path("program_show", { program: program.id }) }}" class="btn btn-light">Voir la fiche</a>
 						</div>
 					</div>
 				{% else %}

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Season index
+{% endblock %}
+
+{% block body %}
+	<h1 class="text-secondary">Season index</h1>
+
+	<table class="table text-light">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Number</th>
+				<th>Year</th>
+				<th>Description</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for season in seasons %}
+				<tr>
+					<td>{{ season.id }}</td>
+					<td>{{ season.number }}</td>
+					<td>{{ season.year }}</td>
+					<td>{{ season.description }}</td>
+					<td>
+						<a href="{{ path('app_season_show', {'id': season.id}) }}" class="text-secondary">show</a>
+						<a href="{{ path('app_season_edit', {'id': season.id}) }}" class="text-secondary">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="5">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a href="{{ path('app_season_new') }}">Create new</a>
+{% endblock %}

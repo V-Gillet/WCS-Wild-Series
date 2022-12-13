@@ -20,10 +20,26 @@
 									({{program.id}})
 								</h2>
 								<p class="card-text text-light">{{program.synopsis}}</p>
-								<a href="{{ path("program_show", { id: program.id }) }}" class="btn btn-light">Voir la fiche</a>
+								<a href="{{ path("program_show", { program: program.id }) }}" class="btn btn-light">Voir la fiche</a>
 							</div>
+							<strong>Acteurs :</strong>
+							<ul>
+
+								{% for actor in program.actors %}
+
+									<li>{{ actor.name }}</li>
+
+								{% else %}
+
+									<li>Aucun acteur pour cette série</li>
+
+								{% endfor %}
+
+							</ul>
 						</div>
+
 					</div>
+
 				{% else %}
 					Aucune série trouvée.
 				{% endfor %}

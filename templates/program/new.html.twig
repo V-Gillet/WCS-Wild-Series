@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle série
+{% endblock %}
+
+{% block body %}
+	{{ form_start(form) }}
+
+	{{ form_widget(form) }}
+
+	<button type="submit">Ajouter la série</button>
+
+
+	{{ form_end(form) }}
+{% endblock %}
