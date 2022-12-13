@@ -10,7 +10,7 @@
 			<div class="row g-4 ">
 				{% for program in programs %}
 					<div class="card-container col-md-3">
-						<div class="card bg-primary p-0 h-100">
+						<div class="card bg-primary p-0">
 							<img src="{{ asset('build/images/breaking_bad.jpg') }}" class="card-img-top" alt="...">
 							<div class="card-body">
 								<h2 class="card-title">
@@ -21,21 +21,24 @@
 								</h2>
 								<p class="card-text text-light">{{program.synopsis}}</p>
 								<a href="{{ path("program_show", { program: program.id }) }}" class="btn btn-light">Voir la fiche</a>
+								<div>
+									<strong class="text-light">Acteurs :</strong>
+									<ul class="row">
+
+										{% for actor in program.actors %}
+
+											<li class="col-4 text-light">{{ actor.name }}</li>
+
+										{% else %}
+
+											<li>Aucun acteur pour cette série</li>
+
+										{% endfor %}
+
+									</ul>
+								</div>
 							</div>
-							<strong>Acteurs :</strong>
-							<ul>
 
-								{% for actor in program.actors %}
-
-									<li>{{ actor.name }}</li>
-
-								{% else %}
-
-									<li>Aucun acteur pour cette série</li>
-
-								{% endfor %}
-
-							</ul>
 						</div>
 
 					</div>
