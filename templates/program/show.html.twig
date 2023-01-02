@@ -18,6 +18,7 @@
 						<div class="card-body d-flex flex-column">
 							<h1 class="card-title">
 								{{program.title}}
+								({{programDuration}})
 							</h1>
 							<p class="card-text text-light ">{{program.synopsis}}</p>
 							<div class="d-flex py-2 text-secondary">
@@ -26,7 +27,7 @@
 									<a href="{{ path("program_season_show", { program: program.id, season: season.id }) }}" class="card-text text-secondary px-2">{{season.number}}</a>
 								{% endfor %}
 							</div>
-							<a href="{{ path("program_show", { program: program.id }) }}" class="btn btn-light">Voir la fiche</a>
+							<a href="{{ path("program_show", { slug: program.slug }) }}" class="btn btn-light">Voir la fiche</a>
 						</div>
 					</div>
 				</div>
